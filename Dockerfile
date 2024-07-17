@@ -3,7 +3,7 @@ FROM cruizba/ubuntu-dind
 LABEL author="baterflyrity"
 LABEL mail="baterflyrity@yandex.ru"
 LABEL home="https://github.com/baterflyrity/dockerusp"
-LABEL version="1.0.0"
+LABEL version="1.0.1"
 LABEL description="Docker + Ubuntu + SSH + Python - finally all out of the box!"
 
 # Prepare apt
@@ -22,8 +22,8 @@ COPY sshd_root.conf /etc/ssh/sshd_config.d/sshd_root.conf
 EXPOSE 22
 
 # Enable remote docker access
-COPY daemon.json /etc/docker/daemon.json
-EXPOSE 2375
+# COPY daemon.json /etc/docker/daemon.json
+# EXPOSE 2375
 
 # Autostart stuff
 COPY entrypoint.sh /usr/local/bin/
